@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no,viewport-fit=cover" />
+  <meta name="theme-color" content="#101a1d" />
+  <title>IRON FRONT — Field Command</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="game-shell">
+    <canvas id="battlefield" aria-label="Isometric battlefield"></canvas>
+    <header class="topbar">
+      <div class="brand"><div class="brand-mark">IF</div><div><div class="eyebrow">FIELD COMMAND · SECTOR 07</div><h1>IRON <span>FRONT</span></h1></div></div>
+      <div class="turn-pill"><i></i><span id="phaseLabel">YOUR OPERATION</span><b id="turnLabel">DAY 01</b></div>
+      <button class="icon-btn" id="soundBtn" aria-label="Toggle sound">♫</button>
+    </header>
+    <section class="mission-card">
+      <div class="mission-heading"><span class="mission-icon">✦</span><div><div class="eyebrow">PRIMARY DIRECTIVE</div><strong>Secure the supply line</strong></div><div class="timer"><span>◷</span> <b id="clock">06:00</b></div></div>
+      <div class="mission-progress"><div class="progress-track"><i id="progressFill"></i></div><span id="objectiveCount">0 / 3</span></div>
+      <div class="objective-tags"><span><i class="blue-dot"></i> YOUR SQUAD</span><span><i class="red-dot"></i> HOSTILE FORCES</span></div>
+    </section>
+    <div class="map-label"><span class="ping"></span> BRAVO RIDGE <small> · LIVE INTEL</small></div>
+    <div id="toast" class="toast">Tap a squad to issue orders</div>
+    <section class="unit-panel" id="unitPanel">
+      <div class="unit-avatar">⌖</div><div class="unit-info"><strong id="unitName">Ranger squad</strong><span id="unitDetail">4 OPERATIVES · READY</span></div><div class="unit-health"><span>STRENGTH</span><div><i id="healthFill"></i></div></div>
+    </section>
+    <nav class="command-bar" aria-label="Battle commands">
+      <button class="command-btn" id="moveBtn"><span>↗</span><small>MOVE</small></button>
+      <button class="command-btn" id="attackBtn"><span>◎</span><small>ATTACK</small></button>
+      <button class="command-btn" id="captureBtn"><span>⚑</span><small>CAPTURE</small></button>
+      <button class="end-turn" id="endTurnBtn"><span>END TURN</span><b>➜</b></button>
+    </nav>
+    <div class="round-toast" id="roundToast"></div>
+    <div class="victory-screen" id="resultScreen" hidden><div class="result-card"><div class="result-stamp" id="resultStamp">MISSION COMPLETE</div><div class="eyebrow">BRAVO RIDGE · OPERATION 01</div><h2 id="resultTitle">Supply line secured.</h2><p id="resultCopy">Your squad held the ridge and turned the tide.</p><button id="restartBtn">DEPLOY AGAIN <span>↻</span></button></div></div>
+    <div class="hint" id="hint">SELECT A SQUAD <span>›</span> ISSUE AN ORDER <span>›</span> END TURN</div>
+  </main>
+  <script src="game.js"></script>
+</body>
+</html>
